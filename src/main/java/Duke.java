@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Locale;
 import java.util.Scanner;
 public class Duke {
@@ -14,15 +15,29 @@ public class Duke {
         showLine();
         boolean toExit = false;
         Scanner scan = new Scanner(System.in);
+        String[] strArray = new String[100];
+        int count = 0;
         while (!toExit) {
             try {
                 String command = readCommand(scan);
-                if (!command.equals("bye")){
+                if(command.equals("list")){
                     showLine();
-                    System.out.println("\t"+command);
+                    int index = 0;
+                    for (String num: strArray) {
+                        if(num !=null){
+                            index++;
+                            System.out.println("\t"+index+". "+num);
+                        }
+                    }
+                }
+                else if (command.equals("bye")){
+                    toExit = true;
                 }
                 else{
-                    toExit = true;
+                    showLine();
+                    count++;
+                    strArray[count]=command;
+                    System.out.println("\tadded: "+command);
                 }
             }
             finally {
@@ -44,5 +59,6 @@ public class Duke {
         System.out.println("\tBye. Hope to see you again soon!");
         showLine();
     }
+
 
 }
