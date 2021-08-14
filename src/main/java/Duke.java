@@ -1,4 +1,5 @@
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 public class Duke {
 
@@ -14,28 +15,35 @@ public class Duke {
         showLine();
         boolean toExit = false;
         Scanner scan = new Scanner(System.in);
-        String[] strArray = new String[100];
+        Task task;
+        List<Task> list = new ArrayList<>();
         int count = 0;
         while (!toExit) {
             try {
                 String command = readCommand(scan);
                 if(command.equals("list")){
                     showLine();
-                    int index = 0;
-                    for (String num: strArray) {
-                        if(num !=null){
-                            index++;
-                            System.out.println("\t"+index+". "+num);
-                        }
+                    System.out.println("\tHere are the tasks in your list:");
+                    for (int i = 0; i < list.size(); i++) {
+                        System.out.println("\t"+ (i+1) + ". " + list.get(i).toString());
                     }
+                }
+                else if (command.contains("done")){
+                    String num = command.substring(5);
+                    int intNum = Integer.parseInt(num);
+                    Task doneTask = list.get(intNum - 1);
+                    doneTask.markAsDone();
+                    System.out.println("\tNice! I've marked this task as done: ");
+                    System.out.println("\t" + list.get(intNum - 1).toString());
                 }
                 else if (command.equals("bye")){
                     toExit = true;
                 }
                 else{
                     showLine();
+                    task = new Task(command);
+                    list.add(count, task);
                     count++;
-                    strArray[count]=command;
                     System.out.println("\tadded: "+command);
                 }
             }
@@ -56,6 +64,11 @@ public class Duke {
 
     public static void showFarewell() {
         System.out.println("\tBye. Hope to see you again soon!");
+        showLine();
+    }
+
+    public static void showDone() {
+        System.out.println("\tNice! I've marked this task as done: ");
         showLine();
     }
 
