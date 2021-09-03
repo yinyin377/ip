@@ -11,7 +11,7 @@ public class Duke {
     }
 
     public static void printLine(){
-        System.out.println("_______________________________");
+        System.out.println("______________________________");
     }
 
     public static void showGreetings(){
