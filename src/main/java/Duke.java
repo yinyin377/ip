@@ -11,6 +11,16 @@ public class Duke {
         System.out.println("_______________________________");
     }
 
+    public static void checkException(String message){
+        try{
+            throw new DukeException(message);
+        }
+        catch (DukeException ex){
+            System.out.println(ex.getMessage());
+        }
+        printLine();
+    }
+
     public static void main(String[] args) {
         String logo = " ____        _        \n"
                 + "|  _ \\ _   _| | _____ \n"
@@ -37,9 +47,12 @@ public class Duke {
                     System.out.println((i + 1) + ". " + tasklist[i].toString());
                 }
                 printLine();
-                continue;
             }
-            if (userInput.equals("bye")) {
+            else if (userInput.equals("bye")) {
+                break;
+            }
+            else if (!first.equals("event") && !first.equals("deadline") &&!first.equals("todo")) {
+                checkException("☹ OOPS!!! I'm sorry, but I don't know what that means :-(");
                 break;
             }
             else if (first.equals("done")) {
