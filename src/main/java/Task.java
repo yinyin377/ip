@@ -1,5 +1,3 @@
-
-
 public class Task {
     protected String description;
     protected boolean isDone;
@@ -10,15 +8,16 @@ public class Task {
     }
 
     public String getStatusIcon() {
-        return (isDone ? "X" : " "); // mark done task with X
+        return "[" +(isDone ? "\u2713" : "\u2718")+"]" ; //return tick or X symbols
     }
 
-    public void markAsDone() {
+    public String markAsDone() {
         this.isDone = true;
+        return (getStatusIcon()); //return tick or X symbols
     }
 
-    public String toString() {
-        return "[" + this.getStatusIcon() + "] " + this.description;
+    @Override
+    public String toString(){
+        return getStatusIcon() + " " + this.description;
     }
-    //...
 }
