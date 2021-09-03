@@ -2,7 +2,6 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Duke {
-    //private static Task[] tasklist = new Task[100];
     private static ArrayList<Task> tasklist=new ArrayList<>();
     private static int taskCount = 0;
 
@@ -10,9 +9,34 @@ public class Duke {
         tasklist.add(taskCount,s);
         taskCount++;
     }
+
     public static void printLine(){
         System.out.println("_______________________________");
     }
+
+    public static void showGreetings(){
+        String logo = " ____        _        \n"
+                + "|  _ \\ _   _| | _____ \n"
+                + "| | | | | | | |/ / _ \\\n"
+                + "| |_| | |_| |   <  __/\n"
+                + "|____/ \\__,_|_|\\_\\___|\n";
+        System.out.println("Hello from\n" + logo);
+        System.out.println("Hello! I'm Duke");
+        System.out.println("What can I do for you?");
+    }
+
+    public static void showFarewell(){
+        printLine();
+        System.out.println("Bye. Hope to see you again soon!");
+        printLine();
+    }
+
+    public static void showAddedTasks(String addedTask,int numOfTask){
+        System.out.println("Got it. I've added this task: ");
+        System.out.println(addedTask);
+        System.out.println("Now you have " + numOfTask + " tasks in the list.");
+    }
+
     public static void checkException(String message){
         try{
             throw new DukeException(message);
@@ -24,14 +48,7 @@ public class Duke {
     }
 
     public static void main(String[] args){
-        String logo = " ____        _        \n"
-                + "|  _ \\ _   _| | _____ \n"
-                + "| | | | | | | |/ / _ \\\n"
-                + "| |_| | |_| |   <  __/\n"
-                + "|____/ \\__,_|_|\\_\\___|\n";
-        System.out.println("Hello from\n" + logo);
-        System.out.println("Hello! I'm Duke");
-        System.out.println("What can I do for you?");
+        showGreetings();
         Scanner myObj = new Scanner(System.in);
         String userInput;
         while (myObj.hasNextLine()) {
@@ -68,9 +85,7 @@ public class Duke {
                         String firstTD = split01[0];
                         String secondTD = split01[1];
                         addTask(new ToDo(secondTD));
-                        System.out.println("Got it. I've added this task: ");
-                        System.out.println(tasklist.get(taskCount-1).toString());
-                        System.out.println("Now you have " + taskCount + " tasks in the list.");
+                        showAddedTasks(tasklist.get(taskCount-1).toString(),taskCount);
                     }
                     catch (ArrayIndexOutOfBoundsException e){
                         checkException("☹ OOPS!!! The description of a todo cannot be empty.");
@@ -85,9 +100,7 @@ public class Duke {
                         String firstD = split02[0];
                         String secondD = split02[1];
                         addTask(new Deadline(firstD, secondD));
-                        System.out.println("Got it. I've added this task: ");
-                        System.out.println(tasklist.get(taskCount-1).toString());
-                        System.out.println("Now you have " + taskCount + " tasks in the list.");
+                        showAddedTasks(tasklist.get(taskCount-1).toString(),taskCount);
                     }
                     catch (ArrayIndexOutOfBoundsException e){
                         checkException("☹ OOPS!!! The description of a deadline cannot be empty.");
@@ -102,9 +115,7 @@ public class Duke {
                         String firstE = split03[0];
                         String secondE = split03[1];
                         addTask(new Event(firstE, secondE));
-                        System.out.println("Got it. I've added this task: ");
-                        System.out.println(tasklist.get(taskCount-1).toString());
-                        System.out.println("Now you have " + taskCount + " tasks in the list.");
+                        showAddedTasks(tasklist.get(taskCount-1).toString(),taskCount);
                     }
                     catch (ArrayIndexOutOfBoundsException e){
                         checkException("☹ OOPS!!! The description of a event cannot be empty.");
@@ -116,12 +127,8 @@ public class Duke {
                     continue;
                 }
                 printLine();
-
             }
-
         }
-        printLine();
-        System.out.println("Bye. Hope to see you again soon!");
-        printLine();
+        showFarewell();
     }
 }
