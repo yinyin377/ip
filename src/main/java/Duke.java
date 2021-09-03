@@ -23,16 +23,17 @@ public class Duke {
         printLine();
         Scanner myObj = new Scanner(System.in);
         String userInput;
-        int index = 0;
+        int INDEX = 0;
 
         while(myObj.hasNextLine()){
             userInput = myObj.nextLine();
             String[] split = userInput.split(" ");
             String first = split[0];
             if (userInput.equals("list")) {
+                //Print list of tasks
                 printLine();
                 System.out.println("Here are the tasks in your list:");
-                for (int i = 0; i < index; i++) {
+                for (int i = 0; i < INDEX; i++) {
                     System.out.println((i + 1) + ". " + tasklist[i].toString());
                 }
                 printLine();
@@ -41,7 +42,8 @@ public class Duke {
             if (userInput.equals("bye")) {
                 break;
             }
-            else if (first.equals("done")){
+            else if (first.equals("done")) {
+                //Get task index to mark as done
                 String second = split[1];
                 tasklist[Integer.parseInt(second) - 1].markAsDone();
                 printLine();
@@ -53,27 +55,30 @@ public class Duke {
                 printLine();
                 System.out.println("Got it. I've added this task: ");
                 if (first.equals("todo")) {
+                    //add to-do task
                     addTask(new ToDo(userInput));
-                    System.out.println(tasklist[index].toString());
-                    index++;
+                    System.out.println(tasklist[INDEX].toString());
+                    INDEX++;
                 }
                 if (first.equals("deadline")) {
+                    //add deadline task
                     String[] split02 = userInput.split("/by");
                     String firstD = split02[0];
                     String secondD = split02[1];
                     addTask(new Deadline(firstD,secondD));
-                    System.out.println(tasklist[index].toString());
-                    index++;
+                    System.out.println(tasklist[INDEX].toString());
+                    INDEX++;
                 }
                 if (first.equals("event")) {
+                    //add event task
                     String[] split03 = userInput.split("/at");
                     String firstE = split03[0];
                     String secondE = split03[1];
                     addTask(new Event(firstE,secondE));
-                    System.out.println(tasklist[index].toString());
-                    index++;
+                    System.out.println(tasklist[INDEX].toString());
+                    INDEX++;
                 }
-                System.out.println("Now you have "+index+" tasks in the list.");
+                System.out.println("Now you have "+INDEX+" tasks in the list.");
                 printLine();
             }
         }
