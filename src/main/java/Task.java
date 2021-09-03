@@ -8,14 +8,12 @@ abstract class Task {
     }
 
     public String getStatusIcon() {
-        //return tick or X symbols
-        return "[" +(isDone ? "\u2713" : "\u2718")+"]" ;
+        return "[" +(isDone ? "\u2713" : "\u2718")+"]" ; //return tick or X symbols
     }
 
     public String markAsDone() {
         this.isDone = true;
-        //return tick or X symbols
-        return (getStatusIcon());
+        return (getStatusIcon()); //return tick or X symbols
     }
 
     @Override
