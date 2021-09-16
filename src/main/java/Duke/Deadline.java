@@ -60,6 +60,7 @@ public class Deadline extends Task {
      * @return Datetime in yyyy-MM-dd HH:mm format.
      */
     public String getLast(){
+        //get deadline's datetime and print it in yyyy-mm-dd hh:mm format
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
         LocalDateTime dateTime = LocalDateTime.parse(by,formatter);
         this.by = dateTime.format(formatter);
@@ -70,6 +71,7 @@ public class Deadline extends Task {
      * Set Deadline's date and Time.
      */
     public void setLast(String by) {
+        //set deadline's datetime in yyyy-mm-dd hh:mm format
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
         LocalDateTime dateTime = LocalDateTime.parse(by,formatter);
         this.by = dateTime.format(formatter);

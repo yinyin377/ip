@@ -60,6 +60,7 @@ public class Event extends Task {
      * @return Datetime in yyyy-MM-dd HH:mm format.
      */
     public String getLast(){
+        //get event's date and print it in yyyy-mm-dd hh:mm format
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
         LocalDateTime dateTime = LocalDateTime.parse(at,formatter);
         this.at = dateTime.format(formatter);
@@ -70,6 +71,7 @@ public class Event extends Task {
      * Set Event's date and Time.
      */
     public void setLast(String at) {
+        //set event's date in yyyy-mm-dd hh:mm format
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
         LocalDateTime dateTime = LocalDateTime.parse(at,formatter);
         this.at = dateTime.format(formatter);
