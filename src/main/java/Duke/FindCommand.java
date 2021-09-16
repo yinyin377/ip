@@ -1,6 +1,6 @@
 package Duke;
 
-/*
+/*  Recommit to correct naming.
  *  FindCommand.java
  *  Defines the 'Find' action to search tasks using keywords.
  */
