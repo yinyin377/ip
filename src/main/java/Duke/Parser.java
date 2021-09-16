@@ -37,6 +37,12 @@ public class Parser {
                     UpdateCommand upCommand = new UpdateCommand(Integer.parseInt(descrip[0]), descrip[1]);
                     return upCommand;
                 }
+            case "find":
+                if(taskLen < 2) {
+                    throw new DukeException(command);
+                } else {
+                    return new FindCommand(task[1]);
+                }
             case "view":
                 if(taskLen < 2) {
                     throw new DukeException(command);
