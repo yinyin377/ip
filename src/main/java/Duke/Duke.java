@@ -13,7 +13,9 @@ public class Duke {
      *  @param filePath Define file location.
      */
     public Duke(String filePath) {
+        //Creates User interface
         ui = new UI();
+        //Reading data from file stated in filepath
         storage = new Storage(filePath);
         try {
             tasks = new TaskList(storage.load());
