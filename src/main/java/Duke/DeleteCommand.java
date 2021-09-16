@@ -17,6 +17,16 @@ public class DeleteCommand extends Command{
     }
 
     /*
+     * Returns not to exit program.
+     * @return false Command 'Duke' not to exit
+     * after delete command.
+     */
+    @Override
+    public boolean isExit() {
+        return false;
+    }
+
+    /*
      * This method 'Executes' the command and display message
      * after successfully deleting task.
      * @param tasks Object of Task class.
@@ -32,15 +42,5 @@ public class DeleteCommand extends Command{
         System.out.println("\t" + task.toString());
         System.out.println("\tNow you have " + tasks.getTaskSize() + " tasks in the list.");
 
-    }
-
-    /*
-     * Returns not to exit program.
-     * @return false Command 'Duke' not to exit
-     * after delete command.
-     */
-    @Override
-    public boolean isExit() {
-        return false;
     }
 }
