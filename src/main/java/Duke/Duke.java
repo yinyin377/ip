@@ -1,8 +1,5 @@
 package Duke;
 
-import java.util.ArrayList;
-import java.util.Scanner;
-
 public class Duke {
     private Storage storage;
     private TaskList tasks;

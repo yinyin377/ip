@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Duke {
+public class Duke1 {
 //    private static ArrayList<Task> tasklist=new ArrayList<>();
 //    private static int taskCount = 0;
 //
