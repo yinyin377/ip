@@ -34,7 +34,7 @@ public class DeleteCommand extends Command{
      * @param storage Object of Storage class.
      */
     @Override
-    public void execute(TaskList tasks, UI ui, Storage storage) {
+    public String execute(TaskList tasks, UI ui, Storage storage) {
         //delete task from task list
         Task task = tasks.deleteTask(index-1);
         //display successful message and task count
@@ -42,5 +42,6 @@ public class DeleteCommand extends Command{
         System.out.println("\t" + task.toString());
         System.out.println("\tNow you have " + tasks.getTaskSize() + " tasks in the list.");
 
+        return null;
     }
 }

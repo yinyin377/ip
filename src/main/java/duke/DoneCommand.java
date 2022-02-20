@@ -25,12 +25,13 @@ public class DoneCommand extends Command{
      * @param storage Object of Storage class.
      */
     @Override
-    public void execute(TaskList tasks, UI ui, Storage storage) {
+    public String execute(TaskList tasks, UI ui, Storage storage) {
         //mark task as completed
         Task task = tasks.doneTask(index-1);
         //display successful message
         System.out.println("\tNice! I've marked this task as done:");
         System.out.println("\t  " + task.toString());
+        return null;
     }
 
     /*

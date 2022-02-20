@@ -21,7 +21,7 @@ public class FindCommand extends Command{
      * @param storage Object of Storage class.
      */
     @Override
-    public void execute(TaskList tasks, UI ui, Storage storage) {
+    public String execute(TaskList tasks, UI ui, Storage storage) {
         System.out.println("\tHere are the matching tasks in your list:");
         //print all tasks in task list
         for (int i = 1; i < tasks.getTaskSize() + 1; i++) {
@@ -31,6 +31,7 @@ public class FindCommand extends Command{
                 System.out.println("\t"+String.format(i + "." + task, task.getStatusIcon()));
             }
         }
+        return null;
     }
 
     /*

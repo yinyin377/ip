@@ -28,12 +28,13 @@ public class UpdateCommand extends Command{
      * @param storage Object of Storage class.
      */
     @Override
-    public void execute(TaskList tasks, UI ui, Storage storage) {
+    public String execute(TaskList tasks, UI ui, Storage storage) {
         //mark task as completed
         Task task = tasks.updateTask(index-1,dateTime);
         //display successful message
         System.out.println("\tNice! I've updated this task:");
         System.out.println("\t  " + task.toString());
+        return null;
     }
 
     /*

@@ -24,7 +24,7 @@ public class AddCommand extends Command {
      * @param storage Object of Storage class.
      */
     @Override
-    public void execute(TaskList tasks, UI ui, Storage storage) {
+    public String execute(TaskList tasks, UI ui, Storage storage) {
         //add task into task list
         tasks.addTask(task);
         //display successful message and task count
@@ -32,6 +32,7 @@ public class AddCommand extends Command {
         System.out.println("\t " + task.toString());
         System.out.println("\tNow you have " + tasks.getTaskSize() + " tasks in the list.");
 
+        return null;
     }
 
     /*

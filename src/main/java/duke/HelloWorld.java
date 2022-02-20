@@ -11,10 +11,9 @@ import javafx.stage.Stage;
 import javafx.scene.layout.Region;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
-import java.io.IOException;
-
-public class Duke extends Application {
+public class HelloWorld extends Application {
 
     private ScrollPane scrollPane;
     private VBox dialogContainer;
@@ -24,70 +23,9 @@ public class Duke extends Application {
     private Image user = new Image(this.getClass().getResourceAsStream("/images/user.png"));
     private Image duke = new Image(this.getClass().getResourceAsStream("/images/duke.png"));
 
-    private Storage storage;
-    private TaskList tasks;
-    private UI ui;
-
-    /**
-     *  Constructs duke object.
-     *  @param filePath Define file location.
-     */
-    public Duke(String filePath) {
-        //Creates User interface
-        ui = new UI();
-        //Reading data from file stated in filepath
-        storage = new Storage(filePath);
-        try {
-            tasks = new TaskList(storage.load());
-        } catch (DukeException e) {
-            ui.showLoadingError();
-            tasks = new TaskList();
-        }
-    }
-    /**
-     *  This method shows the flow of 'duke'.
-     */
-
-    public void run() {
-        ui.showWelcome();
-        boolean isExit = false;
-        while (!isExit) {
-            try {
-                String fullCommand = ui.readCommand();
-                ui.showLine(); // show the divider line ("_______")
-                Command c = Parser.parse(fullCommand);
-                c.execute(tasks, ui, storage);
-                isExit = c.isExit();
-                storage.save(tasks.getTaskList());
-            } catch (DukeException e) {
-                ui.displayError(e.getMessage());
-            } finally {
-                ui.showLine();
-            }
-        }
-    }
-    /**
-     *  This is the main method.
-     *  @param args Arguments.
-     */
-
-    public static void main(String[] args) {
-        new Duke("data/tasks.txt").run();
-
-    }
-
     @Override
     public void start(Stage stage) {
         //Step 1. Setting up required components
-        storage = new Storage("data/tasks.txt");
-        stage = initStage(stage);
-
-        try {
-            tasks = new TaskList(storage.load());
-        } catch (DukeException e) {
-            ui.showLoadingError();
-            tasks = new TaskList();
-        }
 
         //The container for the content of the chat to scroll.
         scrollPane = new ScrollPane();
@@ -148,23 +86,11 @@ public class Duke extends Application {
 
         //Part 3. Add functionality to handle user input.
         sendButton.setOnMouseClicked((event) -> {
-            try {
-                handleUserInput();
-            } catch (DukeException e) {
-                handleUserInputException(e);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            handleUserInput();
         });
 
         userInput.setOnAction((event) -> {
-            try {
-                handleUserInput();
-            } catch (DukeException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            handleUserInput();
         });
 
 
@@ -172,15 +98,6 @@ public class Duke extends Application {
         //Scroll down to the end every time dialogContainer's height changes.
         dialogContainer.heightProperty().addListener((observable) -> scrollPane.setVvalue(1.0));
 
-    }
-
-    private Stage initStage(Stage stage) {
-        stage.setTitle("Welcome to Duke!");
-        stage.setResizable(false);
-        stage.setMinHeight(600.0);
-        stage.setMinWidth(400.0);
-
-        return stage;
     }
 
     /**
@@ -202,38 +119,9 @@ public class Duke extends Application {
      * Creates two dialog boxes, one echoing user input and the other containing Duke's reply and then appends them to
      * the dialog container. Clears the user input after processing.
      */
-    private void handleUserInput() throws DukeException, IOException {
+    private void handleUserInput() {
         String userText = new String(userInput.getText());
-        String dukeText = new String();
-
-        //Command c = Parser.parse(userText);
-        //c.execute(tasks, ui, storage);
-
-        if (userText.equals("bye")) {
-            dukeText = ui.showBye();
-        } else {
-            dukeText = new String(getResponse(userText));
-        }
-
-        dialogContainer.getChildren().addAll(
-                DialogBox.getUserDialog(userText, user),
-                DialogBox.getDukeDialog(dukeText, duke)
-        );
-        userInput.clear();
-    }
-
-    /**
-     * Iteration 2:
-     * Creates two dialog boxes, one echoing user input and the other containing Duke's reply and then appends them to
-     * the dialog container. Clears the user input after processing.
-     */
-
-    private void handleUserInputException(DukeException e)  {
-        String userText = new String(userInput.getText());
-        String dukeText = new String();
-
-        dukeText = new String(e.getMessage());
-
+        String dukeText = new String(getResponse(userInput.getText()));
         dialogContainer.getChildren().addAll(
                 DialogBox.getUserDialog(userText, user),
                 DialogBox.getDukeDialog(dukeText, duke)
@@ -245,13 +133,7 @@ public class Duke extends Application {
      * You should have your own function to generate a response to user input.
      * Replace this stub with your completed method.
      */
-    public String getResponse(String input) {
-        try {
-            Command c = Parser.parse(input);
-            String lineToPrint = c.execute(tasks, ui, storage);
-            return lineToPrint;
-        } catch (DukeException e) {
-            return e.getMessage();
-        }
+    String getResponse(String input) {
+        return "Duke: " + input;
     }
 }

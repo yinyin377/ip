@@ -8,12 +8,15 @@ package duke;
 import java.util.Scanner;
 
 public class UI {
-    UI() {}
+    UI() {
 
-    /*
-     * This method shows the duke's Welcome message
+    }
+
+    /**
+     * This method shows the duke's Welcome message.
      */
-    void showWelcome(){
+
+    void showWelcome() {
         showLine();
         String logo = " ____        _        \n"
                 + "|  _ \\ _   _| | _____ \n"
@@ -29,7 +32,7 @@ public class UI {
     /*
      * This method show the divider line.
      */
-    void showLine(){
+    void showLine() {
         System.out.println("\t_____________________________________________________________");
     }
 
@@ -37,7 +40,7 @@ public class UI {
      * Returns input from user
      * @return myObj Input from user
      */
-    String readCommand(){
+    String readCommand() {
         Scanner myObj = new Scanner(System.in);
         return myObj.nextLine();
     }
@@ -53,7 +56,11 @@ public class UI {
      * This method display error message.
      * @param message Error message
      */
-    void displayError(String message){
+    void displayError(String message) {
         System.out.println(message);
+    }
+
+    String showBye() {
+        return "Good Bye!";
     }
 }
