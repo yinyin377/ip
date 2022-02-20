@@ -1,4 +1,4 @@
-package Duke;
+package duke;
 
 /*
  *  UpdateCommand.java
@@ -38,7 +38,7 @@ public class UpdateCommand extends Command{
 
     /*
      * Returns not to exit program.
-     * @return false Command 'Duke' not to exit
+     * @return false Command 'duke' not to exit
      * after done command.
      */
     @Override

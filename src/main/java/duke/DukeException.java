@@ -1,8 +1,8 @@
-package Duke;
+package duke;
 
 /*
  *  DukeException.java
- *  Defines the Exception of 'Duke'.
+ *  Defines the Exception of 'duke'.
  */
 public class DukeException extends Exception {
 
@@ -18,7 +18,7 @@ public class DukeException extends Exception {
     }
 
     /*
-     *  Constructs Duke object.
+     *  Constructs duke object.
      *  @return default message
      */
     public DukeException() {

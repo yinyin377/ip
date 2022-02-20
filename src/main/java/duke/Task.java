@@ -1,4 +1,4 @@
-package Duke;
+package duke;
 
 /*
  *  Task.java

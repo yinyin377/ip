@@ -1,6 +1,4 @@
-package Duke;
-
-import Duke.Command;
+package duke;
 
 /*
  *  DoneCommand.java
@@ -37,7 +35,7 @@ public class DoneCommand extends Command{
 
     /*
      * Returns not to exit program.
-     * @return false Command 'Duke' not to exit
+     * @return false Command 'duke' not to exit
      * after done command.
      */
     @Override

@@ -1,8 +1,8 @@
-package Duke;
+package duke;
 
 /*
  *  UI.java
- *  Defines the UI - User Interface of 'Duke'.
+ *  Defines the UI - User Interface of 'duke'.
  */
 
 import java.util.Scanner;
@@ -11,7 +11,7 @@ public class UI {
     UI() {}
 
     /*
-     * This method shows the Duke's Welcome message
+     * This method shows the duke's Welcome message
      */
     void showWelcome(){
         showLine();
@@ -21,7 +21,7 @@ public class UI {
                 + "| |_| | |_| |   <  __/\n"
                 + "|____/ \\__,_|_|\\_\\___|\n";
         System.out.println("Hello from\n" + logo);
-        System.out.println("Hello! I'm Duke");
+        System.out.println("Hello! I'm duke");
         System.out.println("What can I do for you?");
         showLine();
     }

@@ -1,4 +1,4 @@
-package Duke;
+package duke;
 
 /*
  *  AddCommand.java
@@ -36,7 +36,7 @@ public class AddCommand extends Command {
 
     /*
      * Returns not to exit program.
-     * @return false Command 'Duke' not to exit
+     * @return false Command 'duke' not to exit
      * after add command.
      */
     @Override

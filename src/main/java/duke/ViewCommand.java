@@ -1,6 +1,4 @@
-package Duke;
-
-import Duke.Command;
+package duke;
 
 /*
  *  ViewCommand.java
@@ -48,7 +46,7 @@ public class ViewCommand extends Command{
 
     /*
      * Returns not to exit program.
-     * @return false Command 'Duke' not to exit
+     * @return false Command 'duke' not to exit
      * after list command.
      */
     @Override

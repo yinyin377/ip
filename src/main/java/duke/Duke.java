@@ -1,12 +1,12 @@
-package Duke;
+package duke;
 
 public class Duke {
     private Storage storage;
     private TaskList tasks;
     private UI ui;
 
-    /*  Recommit due to wrong branch name
-     *  Constructs Duke object.
+    /**
+     *  Constructs duke object.
      *  @param filePath Define file location.
      */
     public Duke(String filePath) {
@@ -21,9 +21,10 @@ public class Duke {
             tasks = new TaskList();
         }
     }
-    /*
-     *  This method shows the flow of 'Duke'.
+    /**
+     *  This method shows the flow of 'duke'.
      */
+
     public void run() {
         ui.showWelcome();
         boolean isExit = false;
@@ -42,11 +43,13 @@ public class Duke {
             }
         }
     }
-    /*
-     *  This is the main method
+    /**
+     *  This is the main method.
      *  @param args Arguments.
      */
+
     public static void main(String[] args) {
         new Duke("data/tasks.txt").run();
+
     }
 }

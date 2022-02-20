@@ -1,4 +1,4 @@
-package Duke;
+package duke;
 
 /*  Recommit to correct naming.
  *  FindCommand.java
@@ -35,7 +35,7 @@ public class FindCommand extends Command{
 
     /*
      * Returns not to exit program.
-     * @return false Command 'Duke' not to exit
+     * @return false Command 'duke' not to exit
      * after list command.
      */
     @Override

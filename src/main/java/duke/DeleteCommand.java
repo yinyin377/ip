@@ -1,4 +1,4 @@
-package Duke;
+package duke;
 
 /*
  *  DeleteCommand.java
@@ -18,7 +18,7 @@ public class DeleteCommand extends Command{
 
     /*
      * Returns not to exit program.
-     * @return false Command 'Duke' not to exit
+     * @return false Command 'duke' not to exit
      * after delete command.
      */
     @Override

@@ -1,4 +1,4 @@
-package Duke;
+package duke;
 
 /*
  *  Command.java
@@ -15,7 +15,7 @@ public abstract class Command {
 
     /*
      * Returns to or not to exit program.
-     * @return Command 'Duke' to or not to exit
+     * @return Command 'duke' to or not to exit
      */
     public abstract boolean isExit();
 }

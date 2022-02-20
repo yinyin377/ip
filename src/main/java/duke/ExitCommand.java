@@ -1,6 +1,4 @@
-package Duke;
-
-import Duke.Command;
+package duke;
 
 /*
  *  ExitCommand.java
@@ -32,7 +30,7 @@ public class ExitCommand extends Command{
 
     /*
      * Returns to exit program.
-     * @return false Command 'Duke' not to exit
+     * @return false Command 'duke' not to exit
      * after exit command.
      */
     @Override

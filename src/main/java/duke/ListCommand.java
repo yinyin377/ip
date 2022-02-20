@@ -1,6 +1,4 @@
-package Duke;
-
-import Duke.Command;
+package duke;
 
 /*
  *  ListCommand.java
@@ -33,7 +31,7 @@ public class ListCommand extends Command{
 
     /*
      * Returns not to exit program.
-     * @return false Command 'Duke' not to exit
+     * @return false Command 'duke' not to exit
      * after list command.
      */
     @Override
