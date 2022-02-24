@@ -39,16 +39,19 @@ public class Storage {
             //reads all task written in the file
             while ((line = reader.readLine()) != null) {
                 String[] readData = line.split(" \\| ");
+                Task newTask = null;
                 switch (readData[0]) {
+                case "T":
+                    tasks.add(new ToDo(readData[1], readData[2]));
+                    break;
                 case "D":
-                    new Deadline(readData[1], readData[2], readData[3]);
+                    tasks.add(new Deadline(readData[1], readData[2], readData[3]));
                     break;
                 case "E":
-                    new Event(readData[1], readData[2], readData[3]);
+                    tasks.add(new Event(readData[1], readData[2], readData[3]));
                     break;
                 default:
-                    new ToDo(readData[1], readData[2]);
-                    break;
+                    tasks.add(newTask);
                 }
             }
             reader.close();
