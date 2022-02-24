@@ -63,14 +63,13 @@ public class Storage {
      *  This method save task list with tasks in file.
      * @param tasks Task stored in array list.
      */
-    @SuppressWarnings("checkstyle:AvoidEscapedUnicodeCharacters")
     public void save(ArrayList<Task> tasks) {
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter("data/tasks.txt"));
             //writes all tasks into file
             for (Task task : tasks) {
                 char type = task.getTaskType();
-                String status = (task.getStatusIcon().equals("[\u2713]")) ? "1" : "0";
+                String status = (task.getStatus() ? "1" : "0");
                 String description = task.getDescription();
                 String last = "";
                 if (type != 'T') {

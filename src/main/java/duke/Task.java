@@ -39,6 +39,14 @@ abstract class Task {
     /*
      * Set Task's completion status.
      */
+    public boolean getStatus() {
+        return (isDone) ? true : false;
+    }
+
+
+    /*
+     * Set Task's completion status.
+     */
     public void setStatus(String status) {
         this.isDone = (status.equals("1")) ? true : false;
     }
