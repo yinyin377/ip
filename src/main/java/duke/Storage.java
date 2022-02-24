@@ -15,8 +15,7 @@ public class Storage {
      * Constructs Storage object
      * @param filePath Define file location.
      */
-    Storage(String filePath){
-        this.filePath = filePath;
+    Storage(){
         try {
             reader = new BufferedReader(new FileReader("data/tasks.txt"));
         } catch (IOException e) {

@@ -25,8 +25,8 @@ public class ExitCommand extends Command{
         //save and store all tasks.
         storage.save(tasks.getTaskList());
         //display goodbye message
-        System.out.println("\tBye. Hope to see you again soon!");
-        return null;
+        String output = "\tBye. Hope to see you again soon!";
+        return output;
     }
 
     /*

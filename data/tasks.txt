@@ -1,1 +1,4 @@
-T | 1 | school work | 
+T | 1 | school | 
+T | 1 | sch | 
+T | 0 | schooling | 
+T | 0 | sch | 

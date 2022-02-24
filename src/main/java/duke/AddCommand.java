@@ -28,11 +28,11 @@ public class AddCommand extends Command {
         //add task into task list
         tasks.addTask(task);
         //display successful message and task count
-        System.out.println("\tGot it. I've added this task:");
-        System.out.println("\t " + task.toString());
-        System.out.println("\tNow you have " + tasks.getTaskSize() + " tasks in the list.");
+        String output = "\tGot it. I've added this task:";
+        output = output + "\t " + task.toString();
+        output = output + "\tNow you have " + tasks.getTaskSize() + " tasks in the list.";
 
-        return null;
+        return output;
     }
 
     /*

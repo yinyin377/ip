@@ -32,8 +32,8 @@ public class UpdateCommand extends Command{
         //mark task as completed
         Task task = tasks.updateTask(index-1,dateTime);
         //display successful message
-        System.out.println("\tNice! I've updated this task:");
-        System.out.println("\t  " + task.toString());
+        String output = "\tNice! I've updated this task:";
+        output = output + "\t  " + task.toString();
         return null;
     }
 

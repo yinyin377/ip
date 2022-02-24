@@ -5,8 +5,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 
 import java.io.IOException;
 
@@ -35,6 +34,15 @@ public class MainWindow extends AnchorPane {
 
     public void setDuke(Duke d) {
         duke = d;
+        Image image = new Image("/images/background.jpeg");
+        BackgroundSize size = new BackgroundSize(600.0, 700.0, true, true, true, true);
+        BackgroundImage bi = new BackgroundImage(image, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, size);
+        dialogContainer.setBackground(new Background(bi));
+        DialogBox dukeWelcome = DialogBox.getDukeDialog(duke.getWelcome(), dukeImage);
+
+        assert dukeWelcome != null : "dukeWelcome should not be null";
+
+        dialogContainer.getChildren().addAll(dukeWelcome);
     }
 
     /**

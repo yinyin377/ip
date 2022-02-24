@@ -29,9 +29,9 @@ public class DoneCommand extends Command{
         //mark task as completed
         Task task = tasks.doneTask(index-1);
         //display successful message
-        System.out.println("\tNice! I've marked this task as done:");
-        System.out.println("\t  " + task.toString());
-        return null;
+        String output = "\tNice! I've marked this task as done:";
+        output = output + "\t  " + task.toString();
+        return output;
     }
 
     /*

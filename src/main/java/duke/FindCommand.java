@@ -22,13 +22,13 @@ public class FindCommand extends Command{
      */
     @Override
     public String execute(TaskList tasks, UI ui, Storage storage) {
-        System.out.println("\tHere are the matching tasks in your list:");
+        String output = "\tHere are the matching tasks in your list:";
         //print all tasks in task list
         for (int i = 1; i < tasks.getTaskSize() + 1; i++) {
             Task task = tasks.getTaskList().get(i - 1);
             String description = task.getDescription();
-            if(description.contains(keyWord)){
-                System.out.println("\t"+String.format(i + "." + task, task.getStatusIcon()));
+            if (description.contains(keyWord)) {
+                output = output + "\t" + String.format(i + "." + task, task.getStatusIcon());
             }
         }
         return null;
