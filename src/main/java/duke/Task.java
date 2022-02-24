@@ -37,10 +37,10 @@ abstract class Task {
     }
 
     /*
-     * Set Task's completion status.
+     * Get Task's completion status.
      */
     public boolean getStatus() {
-        return (isDone) ? true : false;
+        return isDone;
     }
 
 
@@ -48,7 +48,7 @@ abstract class Task {
      * Set Task's completion status.
      */
     public void setStatus(String status) {
-        this.isDone = (status.equals("1")) ? true : false;
+        this.isDone = status.equals("1");
     }
 
     /*
@@ -89,13 +89,5 @@ abstract class Task {
      */
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    /*
-     * Returns task date and time
-     * @return date and time of task.
-     */
-    public String getLast() {
-        return getLast();
     }
 }

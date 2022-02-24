@@ -28,6 +28,8 @@ public class Parser {
             return new HelpCommand();
         case "bye":
             return new ExitCommand();
+        case "save":
+            return new SaveCommand();
         case "done":
             if (taskLen < 2) {
                 throw new DukeException(command);
@@ -40,6 +42,7 @@ public class Parser {
             } else {
                 assert task[1].contains("/to") : "Missing /to arguments for update";
                 String[] descrip = task[1].split(" /to ", 2);
+                System.out.println(descrip[0] + descrip[1]);
                 return new UpdateCommand(Integer.parseInt(descrip[0]), descrip[1]);
             }
         case "find":

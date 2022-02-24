@@ -8,10 +8,9 @@ public abstract class Command {
     /*
      * This method 'Executes' the command.
      * @param tasks Object of Task class.
-     * @param ui Object of UI class - User Interface.
      * @param storage Object of Storage class.
      */
-    public abstract String execute(TaskList tasks, UI ui, Storage storage);
+    public abstract String execute(TaskList tasks, Storage storage);
 
     /*
      * Returns to or not to exit program.

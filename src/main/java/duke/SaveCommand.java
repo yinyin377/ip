@@ -5,17 +5,17 @@ package duke;
  *  Defines the 'Exit' action flow to exit program.
  */
 
-public class ExitCommand extends Command {
+public class SaveCommand extends Command {
     /**
-     *  Constructs Exit Command object.
+     *  Constructs Save Command object.
      */
-    public ExitCommand(){
+    public SaveCommand(){
 
     }
 
     /*
      * This method 'Executes' the command and
-     *  display 'Goodbye' message.
+     *  display 'Saved' message.
      * @param tasks Object of Task class.
      * @param storage Object of Storage class.
      */
@@ -23,8 +23,8 @@ public class ExitCommand extends Command {
     public String execute(TaskList tasks, Storage storage) {
         //save and store all tasks.
         storage.save(TaskList.getTaskList());
-        //display goodbye message
-        return "\tBye. Hope to see you again soon!";
+        //display saved message
+        return "\t All tasks have been saved.";
     }
 
     /*

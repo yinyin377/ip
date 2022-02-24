@@ -30,13 +30,12 @@ public class DeleteCommand extends Command {
      * This method 'Executes' the command and display message
      * after successfully deleting task.
      * @param tasks Object of Task class.
-     * @param ui Object of UI class - User Interface.
      * @param storage Object of Storage class.
      */
     @Override
-    public String execute(TaskList tasks, UI ui, Storage storage) {
+    public String execute(TaskList tasks, Storage storage) {
         //delete task from task list
-        Task task = tasks.deleteTask(index - 1);
+        Task task = TaskList.deleteTask(index - 1);
         //display successful message and task count
         String output = "\tNoted. I've removed this task:\n";
         output = output + "\t" + task.toString() + "\n";

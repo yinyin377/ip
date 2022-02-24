@@ -21,16 +21,15 @@ public class DoneCommand extends Command {
      * This method 'Executes' the command and display message
      * after successfully marking task as completed.
      * @param tasks Object of Task class.
-     * @param ui Object of UI class - User Interface.
      * @param storage Object of Storage class.
      */
     @Override
-    public String execute(TaskList tasks, UI ui, Storage storage) {
+    public String execute(TaskList tasks, Storage storage) {
         //mark task as completed
-        Task task = tasks.doneTask(index - 1);
+        Task task = TaskList.doneTask(index - 1);
         //display successful message
         String output = "\tNice! I've marked this task as done:\n";
-        output = output + "\t  " + task.toString();
+        output = output + "\t  " + task;
         return output;
     }
 

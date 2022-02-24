@@ -20,31 +20,30 @@ public class ViewCommand extends Command {
      * This method 'Executes' the command and
      *  display searched tasks in the task list.
      * @param tasks Object of Task class.
-     * @param ui Object of UI class - User Interface.
      * @param storage Object of Storage class.
      */
     @Override
-    public String execute(TaskList tasks, UI ui, Storage storage) {
-        String output = "\tHere are the tasks matching your schedule:\n";
+    public String execute(TaskList tasks, Storage storage) {
+        StringBuilder output = new StringBuilder("\tHere are the tasks matching your schedule:\n");
         //print all tasks in task list
         for (int i = 1; i < tasks.getTaskSize() + 1; i++) {
-            Task task = tasks.getTaskList().get(i - 1);
+            Task task = TaskList.getTaskList().get(i - 1);
             String dateTime = "";
             if (task.getTaskType() == 'E') {
                 Event event;
-                event = (Event) tasks.getTaskList().get(i - 1);
+                event = (Event) TaskList.getTaskList().get(i - 1);
                 dateTime = event.getLast();
             }
             if (task.getTaskType() == 'D') {
                 Deadline deadline;
-                deadline = (Deadline) tasks.getTaskList().get(i - 1);
+                deadline = (Deadline) TaskList.getTaskList().get(i - 1);
                 dateTime = deadline.getLast();
             }
             if (dateTime.contains(keyWord)) {
-                output = output + "\t" + String.format(i + "." + task, task.getStatusIcon()) + "\n";
+                output.append("\t").append(String.format(i + "." + task, task.getStatusIcon())).append("\n");
             }
         }
-        return output;
+        return output.toString();
     }
 
     /*

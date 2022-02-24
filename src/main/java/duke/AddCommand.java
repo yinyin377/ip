@@ -20,13 +20,12 @@ public class AddCommand extends Command {
      * This method 'Executes' the command and display message
      * after successfully inserting task.
      * @param tasks Object of Task class.
-     * @param ui Object of UI class - User Interface.
      * @param storage Object of Storage class.
      */
     @Override
-    public String execute(TaskList tasks, UI ui, Storage storage) {
+    public String execute(TaskList tasks, Storage storage) {
         //add task into task list
-        tasks.addTask(task);
+        TaskList.addTask(task);
         //display successful message and task count
         String output = "\tGot it. I've added this task:\n";
         output = output + "\t " + task.toString() + "\n";

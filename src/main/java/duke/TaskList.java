@@ -4,6 +4,7 @@ package duke;
  *  TaskList.java
  *  Defines task list.
  */
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public class TaskList {
@@ -13,7 +14,7 @@ public class TaskList {
      * Constructs TaskList object
      */
     TaskList() {
-        taskList = new ArrayList<Task>();
+        taskList = new ArrayList<>();
     }
 
     /*
@@ -21,7 +22,7 @@ public class TaskList {
      * @param tasklist List of task.
      */
     TaskList(ArrayList<Task> taskList) {
-        this.taskList = taskList;
+        TaskList.taskList = taskList;
     }
 
     /*
@@ -60,7 +61,7 @@ public class TaskList {
      * @param datetime Task's updated date and time.
      * @return task Updated Task object.
      */
-    public static Task updateTask(int index,String datetime) {
+    public static Task updateTask(int index, String datetime) {
         Task task = taskList.get(index);
         if (task.getTaskType() == 'E') {
             Event event;

@@ -39,16 +39,16 @@ public class Storage {
             //reads all task written in the file
             while ((line = reader.readLine()) != null) {
                 String[] readData = line.split(" \\| ");
-                Task newTask = null;
-                if (readData[0].equals("T")) {
-                    newTask = new ToDo(readData[1], readData[2]);
-                } else if (readData[0].equals("D")) {
-                    newTask = new Deadline(readData[1], readData[2], readData[3]);
-                } else if (readData[0].equals("E")) {
-                    newTask = new Event(readData[1], readData[2], readData[3]);
-                }
-                if (newTask != null) {
-                    tasks.add(newTask);
+                switch (readData[0]) {
+                case "D":
+                    new Deadline(readData[1], readData[2], readData[3]);
+                    break;
+                case "E":
+                    new Event(readData[1], readData[2], readData[3]);
+                    break;
+                default:
+                    new ToDo(readData[1], readData[2]);
+                    break;
                 }
             }
             reader.close();
@@ -72,8 +72,12 @@ public class Storage {
                 String status = (task.getStatus() ? "1" : "0");
                 String description = task.getDescription();
                 String last = "";
-                if (type != 'T') {
-                    last = task.getLast();
+                if (type == 'E') {
+                    Event event = (Event) task;
+                    last = event.getLast();
+                } else if (type == 'D') {
+                    Deadline deadline = (Deadline) task;
+                    last = deadline.getLast();
                 }
                 writer.write(type + " | " + status + " | " + description + " | " + last);
                 writer.newLine();
