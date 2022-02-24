@@ -25,21 +25,17 @@ It makes optimal use of Java Stream and the latest java time APIs, e.g. LocalDat
 
 #### Class Diagram:
 
-![Class Diag.](Duke_ClassDiagram.png)
+![Class Diag.](ClassDiagram.png)
 
 Fig 1. - Duke Class Diagram <br/><br/>
 
 #### Sequence Diagram:
 
-![Seq Diag.](Duke_Seq_Diag.png)
+![Seq Diag.](SeqDiagram.png)
 
 Fig 2. - Sequence Diagram Illustration<br/><br/>
 
 
-
-![JustBook Seq Diag.](JustBook_Seq_Diag2.png)
-
-Fig 3. - Sequence Diagram for User Input <br/><br/>
 
 
 ## Product scope
@@ -101,17 +97,6 @@ Users are able to create, update, delete, view, and find task in real-time using
 2. The application has been designed to handle up to 100’s of task optimally without affecting its performance.
 3. The application should preferably be executable on Windows OS or compatible software-emulated terminal.
 4. User-friendly features incorporated in helpful messages feedback and diagnostic prompts (more to come)
-
-
-## JustBook's Process Workflow
-
-![workflow](duke_process_diag.png)
-
-Fig 4. - JustBook App Activity Diagram<br/><br/>
-The diagram illustrates the possible branches leading to various outcomes based on the user's decisions.
-
-The model illustrates a regular process flow of a user starting up the Duke application. The user launches the
-application. Following that, the user is presented with options to utilise the application as illustrated in the diagram.
 
 
 ## Glossary
