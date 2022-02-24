@@ -6,14 +6,14 @@ package duke;
  *  as completed or done.
  */
 
-public class DoneCommand extends Command{
+public class DoneCommand extends Command {
     private int index;
 
     /*
      * Constructs Done Command object with task index.
      * @param index Parsed task index.
      */
-    public DoneCommand(int index){
+    public DoneCommand(int index) {
         this.index = index;
     }
 
@@ -27,9 +27,9 @@ public class DoneCommand extends Command{
     @Override
     public String execute(TaskList tasks, UI ui, Storage storage) {
         //mark task as completed
-        Task task = tasks.doneTask(index-1);
+        Task task = tasks.doneTask(index - 1);
         //display successful message
-        String output = "\tNice! I've marked this task as done:";
+        String output = "\tNice! I've marked this task as done:\n";
         output = output + "\t  " + task.toString();
         return output;
     }

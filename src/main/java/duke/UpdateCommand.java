@@ -6,16 +6,16 @@ package duke;
  *  Date and Time of Event or Deadline Object.
  */
 
-public class UpdateCommand extends Command{
+public class UpdateCommand extends Command {
     private int index;
     private String dateTime;
 
-    /*
+    /**
      * Constructs Update Command object with task index.
      * @param index Parsed task index.
-     * @param datetime Updated data and time
+     * @param dateTime Updated data and time
      */
-    public UpdateCommand(int index,String dateTime){
+    public UpdateCommand(int index,String dateTime) {
         this.index = index;
         this.dateTime = dateTime;
     }
@@ -30,7 +30,7 @@ public class UpdateCommand extends Command{
     @Override
     public String execute(TaskList tasks, UI ui, Storage storage) {
         //mark task as completed
-        Task task = tasks.updateTask(index-1,dateTime);
+        Task task = tasks.updateTask(index - 1,dateTime);
         //display successful message
         String output = "\tNice! I've updated this task:";
         output = output + "\t  " + task.toString();

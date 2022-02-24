@@ -5,9 +5,13 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
-import javafx.scene.layout.*;
-
-import java.io.IOException;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BackgroundImage;
+import javafx.scene.layout.BackgroundSize;
+import javafx.scene.layout.VBox;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundRepeat;
+import javafx.scene.layout.BackgroundPosition;
 
 /**
  * Controller for MainWindow. Provides the layout for the other controls.
@@ -55,9 +59,7 @@ public class MainWindow extends AnchorPane {
         String userText = new String(userInput.getText());
         String dukeText = new String();
 
-        if (userText.equals("bye")) {
-            dukeText = new String("Good Bye!");
-        }
+
         dukeText = duke.getResponse(userText);
 
         dialogContainer.getChildren().addAll(
@@ -65,5 +67,8 @@ public class MainWindow extends AnchorPane {
                 DialogBox.getDukeDialog(dukeText, dukeImage)
         );
         userInput.clear();
+        if (userText.equals("bye")) {
+            System.exit(0);
+        }
     }
 }

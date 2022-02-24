@@ -29,7 +29,7 @@ public class DukeException extends Exception {
      * Returns exception message.
      * @return message Exception message.
      */
-    public String getMessage(){
+    public String getMessage() {
         return message;
     }
 }

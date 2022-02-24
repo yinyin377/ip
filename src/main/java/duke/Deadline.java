@@ -11,8 +11,8 @@ public class Deadline extends Task {
 
     protected String by;
 
-    /*
-     * Constructs Deadline object
+    /**
+     * Constructs Deadline object.
      * @param description Task description.
      * @param by Task's deadline in datetime.
      */
@@ -23,8 +23,8 @@ public class Deadline extends Task {
         this.by = dateTime.format(formatter);
     }
 
-    /*
-     * Constructs Deadline object
+    /**
+     * Constructs Deadline object.
      * @param description Task description.
      * @param by Task's deadline in datetime.
      * @param status Task's completion status.
@@ -55,11 +55,11 @@ public class Deadline extends Task {
         return "[D]" + super.toString() + " (by:" + by + ")";
     }
 
-    /*
-     * Returns Deadline Datetime
+    /**
+     * Returns Deadline Datetime.
      * @return Datetime in yyyy-MM-dd HH:mm format.
      */
-    public String getLast(){
+    public String getLast() {
         //get deadline's datetime and print it in yyyy-mm-dd hh:mm format
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
         LocalDateTime dateTime = LocalDateTime.parse(by,formatter);

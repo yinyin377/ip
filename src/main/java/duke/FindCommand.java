@@ -4,12 +4,12 @@ package duke;
  *  FindCommand.java
  *  Defines the 'Find' action to search tasks using keywords.
  */
-public class FindCommand extends Command{
+public class FindCommand extends Command {
     private String keyWord;
     /*
      *  Constructs Find Command object.
      */
-    public FindCommand(String keyWord){
+    public FindCommand(String keyWord) {
         this.keyWord = keyWord;
     }
 
@@ -22,16 +22,16 @@ public class FindCommand extends Command{
      */
     @Override
     public String execute(TaskList tasks, UI ui, Storage storage) {
-        String output = "\tHere are the matching tasks in your list:";
+        String output = "\tHere are the matching tasks in your list:\n";
         //print all tasks in task list
         for (int i = 1; i < tasks.getTaskSize() + 1; i++) {
             Task task = tasks.getTaskList().get(i - 1);
             String description = task.getDescription();
             if (description.contains(keyWord)) {
-                output = output + "\t" + String.format(i + "." + task, task.getStatusIcon());
+                output = output + "\t" + String.format(i + "." + task, task.getStatusIcon() + "\n");
             }
         }
-        return null;
+        return output;
     }
 
     /*

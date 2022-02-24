@@ -11,8 +11,8 @@ public class Event extends Task {
 
     protected String at;
 
-    /*
-     * Constructs Event object
+    /**
+     * Constructs Event object.
      * @param description Task description.
      * @param at Task's event date and time.
      */
@@ -23,8 +23,8 @@ public class Event extends Task {
         this.at = dateTime.format(formatter);
     }
 
-    /*
-     * Constructs Event object
+    /**
+     * Constructs Event object.
      * @param description Task description.
      * @param at Task's event date and time.
      * @param status Task's completion status.
@@ -59,7 +59,7 @@ public class Event extends Task {
      * Returns Event Date and time
      * @return Datetime in yyyy-MM-dd HH:mm format.
      */
-    public String getLast(){
+    public String getLast() {
         //get event's date and print it in yyyy-mm-dd hh:mm format
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
         LocalDateTime dateTime = LocalDateTime.parse(at,formatter);

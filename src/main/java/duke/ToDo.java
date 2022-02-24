@@ -16,12 +16,12 @@ public class ToDo extends Task {
         super(description);
     }
 
-    /*
+    /**
      * Constructs Todo object
      * @param description Task description.
      * @param status Task's completion status.
      */
-    public ToDo(String status, String description){
+    public ToDo(String status, String description) {
         super(description);
         this.setStatus(status);
     }

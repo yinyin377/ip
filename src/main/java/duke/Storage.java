@@ -4,7 +4,11 @@ package duke;
  *  Storage.java
  *  Defines method to load and save tasks.
  */
-import java.io.*;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.util.ArrayList;
 
 public class Storage {
@@ -15,7 +19,7 @@ public class Storage {
      * Constructs Storage object
      * @param filePath Define file location.
      */
-    Storage(){
+    Storage() {
         try {
             reader = new BufferedReader(new FileReader("data/tasks.txt"));
         } catch (IOException e) {
@@ -23,7 +27,7 @@ public class Storage {
         }
     }
 
-    /* This method loads task list with tasks in file.
+    /** This method loads task list with tasks in file.
      * @return tasks Task object.
      * @throws DukeException Exception handled.
      */
@@ -55,8 +59,9 @@ public class Storage {
         return tasks;
     }
 
-    /* This method save task list with tasks in file.
-     * @param task Task stored in array list.
+    /**
+     *  This method save task list with tasks in file.
+     * @param tasks Task stored in array list.
      */
     public void save(ArrayList<Task> tasks) {
         try {
@@ -67,14 +72,14 @@ public class Storage {
                 String status = (task.getStatusIcon().equals("[\u2713]")) ? "1" : "0";
                 String description = task.getDescription();
                 String last = "";
-                if (type != 'T'){
+                if (type != 'T') {
                     last = task.getLast();
                 }
                 writer.write(type + " | " + status + " | " + description + " | " + last);
                 writer.newLine();
             }
             writer.close();
-        } catch (IOException e){
+        } catch (IOException e) {
             //prints exception message.
             System.out.println(e.getMessage());
         }

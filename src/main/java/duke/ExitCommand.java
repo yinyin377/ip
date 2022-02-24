@@ -5,8 +5,8 @@ package duke;
  *  Defines the 'Exit' action flow to exit program.
  */
 
-public class ExitCommand extends Command{
-    /*
+public class ExitCommand extends Command {
+    /**
      *  Constructs Exit Command object.
      */
     public ExitCommand(){

@@ -5,12 +5,14 @@ package duke;
  *  Defines the 'View' action to view
  *  schedule for a specific date.
  */
-public class ViewCommand extends Command{
+public class ViewCommand extends Command {
     private String keyWord;
+
     /*
      *  Constructs View Command object.
      */
-    public ViewCommand(String keyWord){
+
+    public ViewCommand(String keyWord) {
         this.keyWord = keyWord;
     }
 
@@ -28,18 +30,18 @@ public class ViewCommand extends Command{
         for (int i = 1; i < tasks.getTaskSize() + 1; i++) {
             Task task = tasks.getTaskList().get(i - 1);
             String dateTime = "";
-            if(task.getTaskType()=='E'){
+            if (task.getTaskType() == 'E') {
                 Event event;
                 event = (Event) tasks.getTaskList().get(i - 1);
                 dateTime = event.getLast();
             }
-            if(task.getTaskType()=='D'){
+            if (task.getTaskType() == 'D') {
                 Deadline deadline;
                 deadline = (Deadline) tasks.getTaskList().get(i - 1);
                 dateTime = deadline.getLast();
             }
-            if(dateTime.contains(keyWord)){
-                output = output + "\t"+String.format(i + "." + task, task.getStatusIcon());
+            if (dateTime.contains(keyWord)) {
+                output = output + "\t" + String.format(i + "." + task, task.getStatusIcon());
             }
         }
         return output;

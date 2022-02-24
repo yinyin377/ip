@@ -4,8 +4,8 @@ package duke;
  *  ListCommand.java
  *  Defines the 'List' action flow to list tasks.
  */
-public class ListCommand extends Command{
-    /*
+public class ListCommand extends Command {
+    /**
      *  Constructs List Command object.
      */
     public ListCommand(){
@@ -25,7 +25,7 @@ public class ListCommand extends Command{
         //print all tasks in task list
         for (int i = 1; i < tasks.getTaskSize() + 1; i++) {
             Task task = tasks.getTaskList().get(i - 1);
-            output = output + "\t"+String.format(i + "." + task, task.getStatusIcon()) + "\n" ;
+            output = output + "\t" + String.format(i + "." + task, task.getStatusIcon()) + "\n";
         }
         return output;
     }

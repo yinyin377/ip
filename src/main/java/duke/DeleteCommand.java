@@ -5,14 +5,14 @@ package duke;
  *  Defines the 'Delete' action flow to delete tasks.
  */
 
-public class DeleteCommand extends Command{
+public class DeleteCommand extends Command {
     private int index;
 
     /*
      * Constructs Delete Command object with parsed task.
      * @param Parsed task.
      */
-    public DeleteCommand(int index){
+    public DeleteCommand(int index) {
         this.index = index;
     }
 
@@ -36,11 +36,11 @@ public class DeleteCommand extends Command{
     @Override
     public String execute(TaskList tasks, UI ui, Storage storage) {
         //delete task from task list
-        Task task = tasks.deleteTask(index-1);
+        Task task = tasks.deleteTask(index - 1);
         //display successful message and task count
-        String output = "\tNoted. I've removed this task:";
-        output = output + "\t" + task.toString();
-        output = output + "\tNow you have " + tasks.getTaskSize() + " tasks in the list.";
+        String output = "\tNoted. I've removed this task:\n";
+        output = output + "\t" + task.toString() + "\n";
+        output = output + "\tNow you have " + tasks.getTaskSize() + " tasks in the list." + "\n";
 
         return output;
     }
