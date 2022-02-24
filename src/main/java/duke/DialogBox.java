@@ -55,14 +55,16 @@ public class DialogBox extends HBox {
 
     public static DialogBox getUserDialog(String text, Image img) {
         var db = new DialogBox(text, img);
-        db.dialog.setStyle("-fx-textFill: #101010; -fx-background-color: #11CCEE; -fx-border-color: #949494; -fx-background-radius: 5; -fx-border-width: 2; -fx-padding: 5; -fx-font-weight: bold");
+        db.dialog.setStyle("-fx-textFill: #101010; -fx-background-color: #11CCEE; -fx-border-color: #949494;"
+                + " -fx-background-radius: 5; -fx-border-width: 2; -fx-padding: 5; -fx-font-weight: bold");
         return db;
     }
 
     public static DialogBox getDukeDialog(String text, Image img) {
         var db = new DialogBox(text, img);
         db.flip();
-        db.dialog.setStyle("-fx-background-color: #FF007F; -fx-border-color: #101010; -fx-background-radius: 5; -fx-border-width: 2; -fx-padding: 5; -fx-font-weight: bold");
+        db.dialog.setStyle("-fx-background-color: #FF007F; -fx-border-color: #101010;"
+                + " -fx-background-radius: 5; -fx-border-width: 2; -fx-padding: 5; -fx-font-weight: bold");
         return db;
     }
 }

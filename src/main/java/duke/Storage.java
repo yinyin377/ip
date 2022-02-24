@@ -63,6 +63,7 @@ public class Storage {
      *  This method save task list with tasks in file.
      * @param tasks Task stored in array list.
      */
+    @SuppressWarnings("checkstyle:AvoidEscapedUnicodeCharacters")
     public void save(ArrayList<Task> tasks) {
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter("data/tasks.txt"));

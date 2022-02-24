@@ -40,7 +40,8 @@ public class MainWindow extends AnchorPane {
         duke = d;
         Image image = new Image("/images/background.jpeg");
         BackgroundSize size = new BackgroundSize(600.0, 700.0, true, true, true, true);
-        BackgroundImage bi = new BackgroundImage(image, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, size);
+        BackgroundImage bi = new BackgroundImage(image, BackgroundRepeat.REPEAT,
+                BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, size);
         dialogContainer.setBackground(new Background(bi));
         DialogBox dukeWelcome = DialogBox.getDukeDialog(duke.getWelcome(), dukeImage);
 

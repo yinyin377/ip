@@ -17,7 +17,7 @@ public class ToDo extends Task {
     }
 
     /**
-     * Constructs Todo object
+     * Constructs Todo object.
      * @param description Task description.
      * @param status Task's completion status.
      */

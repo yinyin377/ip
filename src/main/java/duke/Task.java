@@ -64,7 +64,7 @@ abstract class Task {
      * @return details of task.
      */
     @Override
-    public String toString(){
+    public String toString() {
         return getStatusIcon() + " " + this.getDescription();
     }
 

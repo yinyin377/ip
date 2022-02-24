@@ -6,10 +6,11 @@ package duke;
  */
 public class FindCommand extends Command {
     private String keyWord;
-    /*
+    /**
      *  Constructs Find Command object.
      */
-    public FindCommand(String keyWord) {
+
+    FindCommand(String keyWord) {
         this.keyWord = keyWord;
     }
 

@@ -29,7 +29,11 @@ public class Parser {
         case "bye":
             return new ExitCommand();
         case "done":
-            return new DoneCommand(Integer.parseInt(task[1]));
+            if (taskLen < 2) {
+                throw new DukeException(command);
+            } else {
+                return new DoneCommand(Integer.parseInt(task[1]));
+            }
         case "update":
             if (taskLen < 2) {
                 throw new DukeException(command);
