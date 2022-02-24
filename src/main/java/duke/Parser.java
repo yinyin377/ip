@@ -24,6 +24,8 @@ public class Parser {
         switch (command) {
         case "list":
             return new ListCommand();
+        case "help":
+            return new HelpCommand();
         case "bye":
             return new ExitCommand();
         case "done":
@@ -77,6 +79,7 @@ public class Parser {
                 String[] descrip = task[1].split(" /by ", 2);
                 return new AddCommand(new Deadline(descrip[0], descrip[1]));
             }
+
         default:
             throw new DukeException();
         }

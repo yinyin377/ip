@@ -28,9 +28,9 @@ public class AddCommand extends Command {
         //add task into task list
         tasks.addTask(task);
         //display successful message and task count
-        String output = "\tGot it. I've added this task:";
-        output = output + "\t " + task.toString();
-        output = output + "\tNow you have " + tasks.getTaskSize() + " tasks in the list.";
+        String output = "\tGot it. I've added this task:\n";
+        output = output + "\t " + task.toString() + "\n";
+        output = output + "\tNow you have " + tasks.getTaskSize() + " tasks in the list.\n";
 
         return output;
     }

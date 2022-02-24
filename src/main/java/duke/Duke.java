@@ -90,6 +90,6 @@ public class Duke {
     }
 
     public String getWelcome() {
-        return "Hello! I'm Duke, What can I do for you ?";
+        return "Hello! I'm Duke, What can I do for you ? \n Send 'help' to get some tips to help you start.";
     }
 }
