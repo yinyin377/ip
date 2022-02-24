@@ -24,9 +24,11 @@ public class HelpCommand extends Command {
         String output = "\tHere are some tips to help you:" + "\n";
         //print all tips
         output = output + "\t Command: list \n \t \t  To list all tasks you have.\n";
+        output = output + "\t Command: delete <index> \n \t \t  To delete task specified.\n";
         output = output + "\t Command: todo <title of task> \n \t \t  To add a To Do task.\n";
         output = output + "\t Command: event <title of task> /at <YYYY-MM-DD HH:MM> \n \t \t  To add an event task.\n";
-        output = output + "\t Command: deadline <title of task> /by <YYYY-MM-DD HH:MM> \n \t \t To add an deadline task.\n";
+        output = output + "\t Command: deadline <title of task> /by <YYYY-MM-DD HH:MM> \n \t \t"
+                + " To add an deadline task.\n";
         return output;
     }
 
